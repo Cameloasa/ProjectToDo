@@ -15,10 +15,11 @@ public class ToDoItem {
 
     // Constructor
 
-    public ToDoItem(String title, String taskDescription, boolean done){
+    public ToDoItem(String title, String taskDescription){
         setTitle(title);
         setTaskDescription(taskDescription);
-        setDeadLine(deadLine);
+
+
     }
 
 
@@ -58,7 +59,7 @@ public class ToDoItem {
     }
 
     public void setDeadLine(LocalDate deadLine) {
-        if(deadLine == null) throw new IllegalArgumentException(" deadline is overdue");
+        if (deadLine == null) throw new IllegalArgumentException(" deadline is overdue");
         this.deadLine = deadLine;
     }
 
@@ -81,11 +82,12 @@ public class ToDoItem {
     //Method to get summary
 
     public boolean isOverdue(){
+
         return LocalDate.now().isAfter(deadLine);
 
     }
     public String getSummary (){
-        return "Info : : title" + title + ", Task Description: " + taskDescription + ", dead line: " + deadLine + ", id: " + idToDo;
+        return "Info :Title " + title + ", Task Description: " + taskDescription + ", dead line: " + deadLine + ", id: " + idToDo;
 
     }
 

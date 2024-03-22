@@ -24,6 +24,7 @@ public class Person {
     public Person(){
         this.id = getId();
         this.email = getEmail();
+
     }
 
     public int getId() {
@@ -70,7 +71,7 @@ public class Person {
 
     // Method for get summary should be String
 
-    //todo get summary to string
+
     public String getSummary(){
        return "Person Info: First Name: " + firstName + ", Last Name: " + lastName + ", email: " + email + ", Id: " + id;
 
