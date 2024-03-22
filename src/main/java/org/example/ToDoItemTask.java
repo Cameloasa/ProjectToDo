@@ -3,50 +3,48 @@ package org.example;
 public class ToDoItemTask {
 
     // Fields
-    private int id;
-    private boolean assigned;
-    private String [] toDoItem; // ToDoItem class
-    private String [] assignee; // Person class
+    private int idTsk;
+    private boolean assigned; // set true if assignee is not null
+    private ToDoItem  toDoItem; // ToDoItem class - not null
+    private Person assignee; // Person class
 
     // Constructors --add more
-    public ToDoItemTask(String[] assignee) {
-        this.assignee = (assignee);
-    }
+
 
     // Getters and Setters
-
-
-    public void setId(int id) {
-        this.id = id;
+    public int getIdTsk() {
+        return idTsk;
     }
 
-    public void setAssigned(boolean assigned) {
+    public boolean isAssigned() {return assigned;}
+
+    public void setAssigned(boolean assigned){
         this.assigned = assigned;
     }
 
-    public void setToDoItem(String[] toDoItem) {
+    public void setToDoItem(ToDoItem toDoItem) {
+        if(toDoItem == null) throw new IllegalArgumentException("First field should not be empty");
         this.toDoItem = toDoItem;
     }
 
-    public void setAssignee(String[] assignee) {
-        this.assignee = assignee;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public boolean isAssigned() {
-        return assigned;
-    }
-
-    public String[] getToDoItem() {
+    public ToDoItem getToDoItem(){
         return toDoItem;
     }
 
-    public String[] getAssignee() {
-        return assignee;
+
+   public Person getAssignee(){
+
+       return assignee;
+   }
+
+    public void setAssignee(Person assignee) {
+        if (assignee == null) {
+            throw new IllegalArgumentException("This field should not be empty.");
+        }
+        this.assignee = assignee;
     }
+
+
 
     // Methods
 }

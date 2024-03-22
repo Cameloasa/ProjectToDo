@@ -13,21 +13,24 @@ public class Person {
 
         // Constructors
 
-    public Person() {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.id = id;
+    
+
+    public Person(String firstName,String lastName,String email){
+    setFirstName(firstName);
+    setLastName(lastName);
+    setEmail(email);
+    this.id = getId();
+    }
+    public Person(){
+        this.id = getId();
+        this.email = getEmail();
     }
 
-    public Person(String firstName,String lastName, String email){
-        setId(id);
-        setFirstName(firstName);
-        setLastName(lastName);
-        setEmail(email);
+    public int getId() {
+        return id;
     }
 
-        // Getters and setters
+
 
     public void setId(int id) {
         this.id = id;
@@ -51,9 +54,7 @@ public class Person {
     // Methods
 
 
-    public int getId() {
-        return id;
-    }
+
 
     public String getFirstName() {
         return firstName;
@@ -70,8 +71,8 @@ public class Person {
     // Method for get summary should be String
 
     //todo get summary to string
-    public void getSummary(){
-        System.out.println("Person Info: First Name: " + firstName + ", Last Name: " + lastName + ", email: " + email + ", Id: " + id );
+    public String getSummary(){
+       return "Person Info: First Name: " + firstName + ", Last Name: " + lastName + ", email: " + email + ", Id: " + id;
 
     }
 
