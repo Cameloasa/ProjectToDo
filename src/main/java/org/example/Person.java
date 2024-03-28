@@ -54,9 +54,6 @@ public class Person {
     }
     // Methods
 
-
-
-
     public String getFirstName() {
         return firstName;
     }
